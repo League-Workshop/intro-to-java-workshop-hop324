@@ -12,17 +12,44 @@ public class DragonFight {
 		
 		JOptionPane.showMessageDialog(null, "Defeat the dragon to take its treasure!", "Dragon Fighter", 0, dragon);
 		// 2. Create a variable called "playerHealth" to store your health (set it equal to 100)
-	
+	int playerHealth = 1000;
 		// 3. Create a variable called "dragonHealth" to store the dragon's health (set it equal to 100)
-		
+		int dragonHealth = 100;
 		// 4. Create a variable to hold the damage the player's attack does each round
-		
+		int playerDamage = 0;
 		// 5. Create a variable to hold the damage the dragon's attack does each round
-		
+		int dragonDamage = 0;
 		
 		// 6.  Delete the slashes at the beginning of the next line.  
-		//while(playerHealth>0 && dragonHealth>0) {    //this line of code keeps the battle going until someone's health reaches 0 
+		while(playerHealth>0 && dragonHealth>0) {    //this line of code keeps the battle going until someone's health reaches 0 
+	String x =	JOptionPane.showInputDialog("Do you want to attack with a yell or a kick?");
 		
+		
+
+		if(x .equals("Yell")) {
+		dragonDamage += new Random().nextInt(100);
+		dragonHealth -= dragonDamage;
+			
+		}
+		if(x .equals("Kick")) {
+			dragonDamage += new Random().nextInt(100);
+			dragonHealth -= dragonDamage;
+		}
+		playerDamage += new Random().nextInt(10);
+		playerHealth -= playerDamage;
+		
+		if(playerHealth <= 0) {
+			JOptionPane.showMessageDialog(null, "You Lost. You fought like my Great Great Grandmother, and she's dead!");
+			
+		}
+		else if(dragonHealth <= 0) {
+			JOptionPane.showMessageDialog(null, "You won! I am exceedingly unimpressed.");
+			
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Your health is " + playerHealth + " and the dragon's health is " + dragonHealth + ". You lost" + playerDamage + " health and the dragon lost" + dragonDamage + " health");
+		}
+		}
 		// 7. Add a closing mustache at the very bottom of this program (since we just added an opening mustache on the previous step).
 		
 		// 8. Ask the player in a pop-up if they want to attack the dragon with a yell or a kick
