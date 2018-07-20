@@ -6,12 +6,18 @@ size(500, 800);
 }
 void draw(){
 background(141,233,237);
-fill(#49D5E3);
+fill(#5D3535);
 noStroke();
 ellipse(foodX, foodY, 10, 10);
-if(foodY > height){
+
+foodY++;
+//foodX++;
+
+if(foodY > -height){
+  background(141,233,237);
 ellipse(foodX, foodY, 10, 10);
 }
+
 }
 void drawFish(){
      noStroke();
